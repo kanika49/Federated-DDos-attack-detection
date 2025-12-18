@@ -1,63 +1,55 @@
-# A/B Testing for Product Feature Impact Analysis
+# Federated DDoS Attack Detection using Machine Learning
 
 ## Project Overview
-This project evaluates the impact of a new product feature on user engagement using A/B Testing and statistical hypothesis testing.  
-The goal is to determine whether the feature leads to a statistically significant improvement in Click Through Rate (CTR) and to support data-driven product decisions.
+This project implements a privacy-preserving Distributed Denial-of-Service (DDoS) attack detection system using Federated Learning.  
+Multiple simulated clients collaboratively train a global model without sharing raw network traffic data, ensuring data privacy and security.
 
-This project demonstrates an end-to-end Data Science workflow including data simulation, analysis, visualization, statistical testing, and business insight generation.
+The project demonstrates the application of Federated Learning for real-world cybersecurity problems using Machine Learning.
 
 ---
 
 ## Objective
-- Compare user engagement between Control (A) and Test (B) groups
-- Measure the impact of a new product feature using CTR
-- Validate results using statistical significance testing
-- Provide actionable insights for product rollout decisions
+- Detect DDoS attacks with high accuracy
+- Preserve user and network data privacy using Federated Learning
+- Reduce false positives in intrusion detection systems
 
 ---
 
 ## Dataset
-The dataset is synthetically generated to simulate real-world product usage behavior.
-
-Total users: 15,000
-
-### Features
-- user_id: Unique user identifier
-- group: Control (A) or Test (B)
-- device: Mobile or Desktop
-- country: USA, India, UK, Germany
-- clicked: 1 = Clicked, 0 = Not Clicked
+- CIC-IDS-2017 dataset
+- Contains both benign and malicious network traffic flows
+- Includes flow-level statistical features such as packet count, flow duration, and protocol metrics
 
 ---
 
 ## Tools & Technologies
 - Python
+- PyTorch
+- Scikit-learn
 - Pandas, NumPy
-- Matplotlib, Seaborn
-- Statsmodels
+- Federated Learning (FedAvg)
+- SMOTE for class imbalance handling
 - Jupyter Notebook
-- Git, GitHub
 
 ---
 
 ## Methodology
-1. Simulated realistic user interaction data
-2. Calculated CTR for control and test groups
-3. Visualized CTR comparison using bar plots
-4. Performed Z-test for proportions to test statistical significance
-5. Conducted segmentation analysis by device type and country
-6. Interpreted results to generate business insights
+1. Preprocessed network traffic data and performed feature scaling
+2. Handled class imbalance using SMOTE
+3. Partitioned data across multiple simulated federated clients
+4. Trained local models independently on each client
+5. Aggregated model weights using Federated Averaging (FedAvg)
+6. Evaluated the global model on unseen test data
 
 ---
 
 ## Results & Insights
-- Test group (B) showed a higher CTR compared to control group (A)
-- Statistical testing confirmed the difference was significant (p < 0.05)
-- Mobile users demonstrated higher engagement than Desktop users
-- Certain regions showed stronger feature adoption
+- Achieved over 99% recall for DDoS attack detection
+- Maintained a low false positive rate
+- Demonstrated effective learning without sharing raw data between clients
 
 Business Insight:
-The feature can be rolled out incrementally, prioritizing high-performing user segments such as Mobile users and high-engagement regions.
+Federated Learning enables collaborative intrusion detection while maintaining data privacy, making it suitable for distributed and security-sensitive environments.
 
 ---
 
